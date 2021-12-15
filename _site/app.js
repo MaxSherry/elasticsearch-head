@@ -2974,7 +2974,7 @@
 			return { tag: "DIV", cls: "anyRequest", children: [
 				{ tag: "DIV", cls: "uiAnyRequest-request", children: [
 					new app.ui.SidebarSection({
-						open: false,
+						open: true,
 						title: i18n.text("AnyRequest.History"),
 						body: { tag: "UL", onclick: this._historyClick_handler, cls: "uiAnyRequest-history", children: this.history.map(this._historyItem_template, this)	}
 					}),
@@ -2989,7 +2989,7 @@
 							{ tag: "TEXTAREA", name: "body", rows: 20, text: JSON.stringify(this.config.query) },
 							{ tag: "BUTTON", css: { cssFloat: "right" }, type: "button", children: [ { tag: "B", text: i18n.text("AnyRequest.Request") } ], onclick: this._request_handler },
 							{ tag: "BUTTON", type: "button", text: i18n.text("AnyRequest.ValidateJSON"), onclick: this._validateJson_handler },
-							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", name: "pretty" }, i18n.text("AnyRequest.Pretty") ] },
+							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", name: "pretty", checked: true}, i18n.text("AnyRequest.Pretty") ] },
 							{ tag: "DIV", cls: "uiAnyRequest-jsonErr" }
 						]}
 					}),
@@ -3024,11 +3024,11 @@
 						title: i18n.text("AnyRequest.DisplayOptions"),
 						help: "AnyRequest.DisplayOptionsHelp",
 						body: { tag: "DIV", children: [
-							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", checked: true, name: "asJson" }, i18n.text("AnyRequest.AsJson") ] },
+							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", name: "asJson" }, i18n.text("AnyRequest.AsJson") ] },
 							{ tag: "BR" },
 							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", name: "asGraph" }, i18n.text("AnyRequest.AsGraph") ] },
 							{ tag: "BR" },
-							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", name: "asTable" }, i18n.text("AnyRequest.AsTable") ] }
+							{ tag: "LABEL", children: [ { tag: "INPUT", type: "checkbox", checked: true, name: "asTable" }, i18n.text("AnyRequest.AsTable") ] }
 						] }
 					})
 				] },
